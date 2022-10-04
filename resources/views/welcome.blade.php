@@ -27,15 +27,15 @@
 
     </head>
     <body style="font-family:Kosugi Maru" class="bg-gray-100">
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 gap-4">
             <p class="col-span-12 text-4xl text-center pt-2">発注システム</p>
             @if (Route::has('login'))
                 @auth
                     <a href="{{ route('home.index') }}" class="col-start-5 col-span-4 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ホーム</a>
                 @else
-                    <a href="{{ route('login') }}" class="col-start-2 xl:col-start-3 col-span-5 xl:col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ログイン</a>
+                    <a href="{{ route('login') }}" class="col-start-1 xl:col-start-3 col-span-12 xl:col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ログイン</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="col-start-7 xl:col-start-8 col-span-5 xl:col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ユーザー登録</a>
+                        <a href="{{ route('register') }}" class="col-start-1 xl:col-start-8 col-span-12 xl:col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ユーザー登録</a>
                     @endif
                 @endauth
             @endif

@@ -556,8 +556,6 @@ video {
   grid-column-start: 5;
 }.col-start-8 {
   grid-column-start: 8;
-}.col-start-2 {
-  grid-column-start: 2;
 }.row-span-6 {
   grid-row: span 6 / span 6;
 }.row-span-3 {
