@@ -77,7 +77,7 @@ $("[class^=store_modify]").on("click",function(){
         var ajax_url = '/store_info_get_ajax';
     }
     if(process.env.MIX_APP_ENV === 'pro'){
-        var ajax_url = '/petsrock/store_info_get_ajax';
+        var ajax_url = '/order/store_info_get_ajax';
     }
     $.ajax({
         headers: {

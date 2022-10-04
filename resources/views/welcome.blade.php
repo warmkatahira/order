@@ -22,6 +22,9 @@
         <!-- Lordicon -->
         <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{{ asset('image/favicon.svg') }}">
+
     </head>
     <body style="font-family:Kosugi Maru" class="bg-gray-100">
         <div class="grid grid-cols-12">

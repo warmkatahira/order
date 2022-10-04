@@ -23,7 +23,7 @@ $("[class^=order_item_delete]").on("click",function(){
         var ajax_url = '/cart_delete_ajax';
     }
     if(process.env.MIX_APP_ENV === 'pro'){
-        var ajax_url = '/petsrock/cart_delete_ajax';
+        var ajax_url = '/order/cart_delete_ajax';
     }
     $.ajax({
         headers: {
@@ -72,7 +72,7 @@ $("[id=store_search_enter]").on("click",function(){
         var ajax_url = '/store_search_get_ajax';
     }
     if(process.env.MIX_APP_ENV === 'pro'){
-        var ajax_url = '/petsrock/store_search_get_ajax';
+        var ajax_url = '/order/store_search_get_ajax';
     }
     $.ajax({
         headers: {
@@ -116,7 +116,7 @@ $("[id=store_select_enter]").on("click",function(){
             var ajax_url = '/select_store_get_ajax';
         }
         if(process.env.MIX_APP_ENV === 'pro'){
-            var ajax_url = '/petsrock/select_store_get_ajax';
+            var ajax_url = '/order/select_store_get_ajax';
         }
         $.ajax({
             headers: {
@@ -156,7 +156,7 @@ $("[class^=order_quantity]").on("change",function(){
         var ajax_url = '/order_quantity_change_ajax';
     }
     if(process.env.MIX_APP_ENV === 'pro'){
-        var ajax_url = '/petsrock/order_quantity_change_ajax';
+        var ajax_url = '/order/order_quantity_change_ajax';
     }
     $.ajax({
         headers: {

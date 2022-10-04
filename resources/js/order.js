@@ -10,7 +10,7 @@ $("[class^=order_in]").on("click",function(){
         var ajax_url = '/cart_in_ajax';
     }
     if(process.env.MIX_APP_ENV === 'pro'){
-        var ajax_url = '/petsrock/cart_in_ajax';
+        var ajax_url = '/order/cart_in_ajax';
     }
     $.ajax({
         headers: {
