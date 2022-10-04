@@ -2,11 +2,11 @@
 <x-app-layout>
     <x-slot name="header" class="">
         <div class="grid grid-cols-12 gap-4">
-            <div class="inline-block col-span-2 text-xl text-gray-800 p-2">
+            <div class="col-span-8 xl:col-span-2 font-semibold text-base xl:text-xl text-gray-800 p-2">
                 発注商品選択
             </div>
             <!-- カートアイコン -->
-            <a href="{{ route('order.input') }}" class="col-start-12 col-span-1 rounded-lg text-center">
+            <a href="{{ route('order.input') }}" class="col-start-9 xl:col-start-12 col-span-4 xl:col-span-1 rounded-lg text-center">
                 <lord-icon
                     src="https://cdn.lordicon.com/dnoiydox.json"
                     trigger="loop"
@@ -27,21 +27,22 @@
     <div class="py-3 px-4 grid grid-cols-12">
         <!-- 検索条件 -->
         <form method="GET" action="{{ route('order.item_search') }}" class="m-0 col-span-12 grid grid-cols-12">
-            <p class="text-xl border-b-4 border-blue-500 col-span-2 mb-3">検索条件</p>
+            <p class="col-span-12 xl:col-span-2 text-base xl:text-xl border-b-4 border-blue-500 mb-3">検索条件</p>
             <div class="col-span-12 grid grid-cols-12 mb-3">
                 <!-- 商品コード条件 -->
-                <label for="search_item_code" class="col-span-1 text-sm text-center py-2 bg-black text-white">商品コード</label>
-                <input type="text" id="search_item_code" name="search_item_code" class="text-xs col-span-1" value="{{ session('search_item_code') }}" autocomplete="off">
+                <label for="search_item_code" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">商品コード</label>
+                <input type="text" id="search_item_code" name="search_item_code" class="col-span-7 xl:col-span-1 text-xs xl:text-sm" value="{{ session('search_item_code') }}" autocomplete="off">
                 <!-- 商品カテゴリ条件 -->
-                <label for="search_item_category" class="col-span-1 text-sm text-center py-2 bg-black text-white">商品カテゴリ</label>
-                <input type="text" id="search_item_category" name="search_item_category" class="text-xs col-span-1" value="{{ session('search_item_category') }}" autocomplete="off">
+                <label for="search_item_category" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">商品カテゴリ</label>
+                <input type="text" id="search_item_category" name="search_item_category" class="col-span-7 xl:col-span-1 text-xs xl:text-sm" value="{{ session('search_item_category') }}" autocomplete="off">
                 <!-- 商品JANコード条件 -->
-                <label for="search_item_jan_code" class="col-span-1 text-sm text-center py-2 bg-black text-white">商品JANコード</label>
-                <input type="text" id="search_item_jan_code" name="search_item_jan_code" class="text-xs col-span-1" value="{{ session('search_item_jan_code') }}" autocomplete="off">
+                <label for="search_item_jan_code" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">商品JANコード</label>
+                <input type="text" id="search_item_jan_code" name="search_item_jan_code" class="col-span-7 xl:col-span-1 text-xs xl:text-sm" value="{{ session('search_item_jan_code') }}" autocomplete="off">
                 <!-- 商品名条件 -->
-                <label for="search_item_name" class="col-span-1 text-sm text-center py-2 bg-black text-white">商品名</label>
-                <input type="text" id="search_item_name" name="search_item_name" class="text-xs col-span-2" value="{{ session('search_item_name') }}" autocomplete="off">
-                <button type="submit" class="col-start-12 col-span-1 rounded-lg bg-black text-white"><i class="las la-search la-lg"></i></button>
+                <label for="search_item_name" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">商品名</label>
+                <input type="text" id="search_item_name" name="search_item_name" class="col-span-7 xl:col-span-1 text-xs xl:text-sm" value="{{ session('search_item_name') }}" autocomplete="off">
+                <!-- 検索ボタン -->
+                <button type="submit" class="col-start-1 xl:col-start-12 col-span-12 xl:col-span-1 py-2 xl:py-0 mt-2 xl:mt-0 rounded-lg bg-black text-white"><i class="las la-search la-lg"></i></button>
             </div>
         </form>
         <table class="col-span-12">

@@ -558,6 +558,8 @@ video {
   grid-column-start: 5;
 }.col-start-8 {
   grid-column-start: 8;
+}.col-start-9 {
+  grid-column-start: 9;
 }.col-start-2 {
   grid-column-start: 2;
 }.row-span-6 {
@@ -1245,16 +1247,25 @@ video {
   }
 }@media (min-width: 1280px) {.xl\:col-span-2 {
     grid-column: span 2 / span 2;
+  }.xl\:col-span-1 {
+    grid-column: span 1 / span 1;
   }.xl\:col-span-3 {
     grid-column: span 3 / span 3;
   }.xl\:col-start-5 {
     grid-column-start: 5;
   }.xl\:col-start-11 {
     grid-column-start: 11;
+  }.xl\:col-start-12 {
+    grid-column-start: 12;
   }.xl\:col-start-3 {
     grid-column-start: 3;
   }.xl\:col-start-8 {
     grid-column-start: 8;
+  }.xl\:mt-0 {
+    margin-top: 0px;
+  }.xl\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }.xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -1264,6 +1275,9 @@ video {
   }.xl\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }.xl\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }.xl\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;

@@ -11027,11 +11027,11 @@ $("[class^=store_modify]").on("click", function () {
   // 変更対象の店舗IDを取得
   modify_store_id = this.id; // 環境でパスを可変させる
 
-  if (true) {
-    var ajax_url = '/store_info_get_ajax';
-  }
-
   if (false) { var ajax_url; }
+
+  if (true) {
+    var ajax_url = '/order/store_info_get_ajax';
+  }
 
   $.ajax({
     headers: {
