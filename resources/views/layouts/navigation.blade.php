@@ -19,8 +19,7 @@
                 </form>
             </ul>
         </div>
-        <p class="col-start-5 col-span-4 text-3xl text-center mt-3">発注システム</p>
-        <p class="col-start-11 col-span-2 text-right text-base mr-3 mt-4">{{ Auth::user()->company.' / '.Auth::user()->name }}</p>
-
+        <p class="col-start-3 xl:col-start-5 col-span-4 text-base xl:text-3xl text-center mt-3">発注システム</p>
+        <p class="col-start-7 xl:col-start-11 col-span-6 xl:col-span-2 text-right text-xs xl:text-base mr-3 mt-4">{{ Auth::user()->company.' / '.Auth::user()->name }}</p>
     </div>
 </header>

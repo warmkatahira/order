@@ -546,8 +546,10 @@ video {
   grid-column-start: 11;
 }.col-start-12 {
   grid-column-start: 12;
-}.col-start-5 {
-  grid-column-start: 5;
+}.col-start-3 {
+  grid-column-start: 3;
+}.col-start-7 {
+  grid-column-start: 7;
 }.col-start-6 {
   grid-column-start: 6;
 }.row-span-6 {
@@ -1235,6 +1237,19 @@ video {
 }@media (min-width: 1024px) {.lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}@media (min-width: 1280px) {.xl\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }.xl\:col-start-5 {
+    grid-column-start: 5;
+  }.xl\:col-start-11 {
+    grid-column-start: 11;
+  }.xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }.xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
