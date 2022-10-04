@@ -540,6 +540,8 @@ video {
   grid-column: span 9 / span 9;
 }.col-span-7 {
   grid-column: span 7 / span 7;
+}.col-span-10 {
+  grid-column: span 10 / span 10;
 }.col-start-1 {
   grid-column-start: 1;
 }.col-start-11 {
@@ -556,6 +558,8 @@ video {
   grid-column-start: 5;
 }.col-start-8 {
   grid-column-start: 8;
+}.col-start-2 {
+  grid-column-start: 2;
 }.row-span-6 {
   grid-row: span 6 / span 6;
 }.row-span-3 {
@@ -1260,6 +1264,9 @@ video {
   }.xl\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }.xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
