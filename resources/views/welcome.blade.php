@@ -28,20 +28,17 @@
     </head>
     <body style="font-family:Kosugi Maru" class="bg-gray-100">
         <div class="grid grid-cols-12">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">ユーザー登録</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
             <p class="col-span-12 text-4xl text-center pt-2">発注システム</p>
-
+            @if (Route::has('login'))
+                @auth
+                    <a href="{{ route('home.index') }}" class="col-start-5 col-span-4 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ホーム</a>
+                @else
+                    <a href="{{ route('login') }}" class="col-start-3 col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ログイン</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="col-start-8 col-span-3 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ユーザー登録</a>
+                    @endif
+                @endauth
+            @endif
         </div>
     </body>
 </html>
