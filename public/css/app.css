@@ -556,6 +556,8 @@ video {
   grid-column-start: 5;
 }.col-start-8 {
   grid-column-start: 8;
+}.col-start-2 {
+  grid-column-start: 2;
 }.row-span-6 {
   grid-row: span 6 / span 6;
 }.row-span-3 {
@@ -1241,10 +1243,16 @@ video {
   }
 }@media (min-width: 1280px) {.xl\:col-span-2 {
     grid-column: span 2 / span 2;
+  }.xl\:col-span-3 {
+    grid-column: span 3 / span 3;
   }.xl\:col-start-5 {
     grid-column-start: 5;
   }.xl\:col-start-11 {
     grid-column-start: 11;
+  }.xl\:col-start-3 {
+    grid-column-start: 3;
+  }.xl\:col-start-8 {
+    grid-column-start: 8;
   }.xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
