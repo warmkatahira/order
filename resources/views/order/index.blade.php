@@ -76,9 +76,9 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
-    <!-- ページネーション -->
-    <div class="px-4 my-3">
-        {{ $items->appends(request()->input())->links() }}
+        <!-- ページネーション -->
+        <div class="col-span-12 mt-3">
+            {{ $items->appends(request()->input())->links() }}
+        </div>
     </div>
 </x-app-layout>
