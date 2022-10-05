@@ -2,12 +2,12 @@
 <x-app-layout>
     <x-slot name="header" class="">
         <div class="grid grid-cols-12 gap-4">
-            <a href="{{ session('back_url_1') }}" class="col-span-1 rounded-lg bg-black text-white text-center py-2">戻る</a>
-            <div class="col-span-2 text-xl text-gray-800 p-2">
+            <a href="{{ session('back_url_1') }}" class="col-span-2 xl:col-span-1 rounded-lg bg-black text-white text-center py-3 text-xs xl:text-sm">戻る</a>
+            <div class="col-span-7 xl:col-span-2 font-semibold text-base xl:text-xl text-gray-800 p-2">
                 発注詳細入力
             </div>
             @if(session('order_info'))
-                <button type="button" id="order_enter" class="col-start-12 col-span-1 rounded-lg text-center bg-blue-200">発注</button>
+                <button type="button" id="order_enter" class="col-start-10 xl:col-start-12 col-span-3 xl:col-span-1 rounded-lg text-center bg-blue-200">発注</button>
             @endif
         </div>
     </x-slot>
@@ -18,38 +18,38 @@
                 <input type="hidden" id="operation_type" name="operation_type" value="new">
                 <div class="col-span-12 grid grid-cols-12 gap-4 grid-rows-6">
                     <!-- 配送先欄 -->
-                    <div class="row-span-6 col-start-1 col-span-5 grid grid-cols-12 gap-4 border border-black rounded-lg p-3 bg-emerald-100">
+                    <div class="row-span-6 col-start-1 col-span-12 xl:col-span-5 grid grid-cols-12 gap-4 border border-black rounded-lg p-3 bg-emerald-100">
                         <div class="col-span-12 grid grid-cols-12">
                             <p class="col-span-12"><i class="las la-info-circle la-lg"></i>配送先</p>
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="shipping_store_name" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">店舗名<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
-                            <input type="text" id="shipping_store_name" name="shipping_store_name" class="rounded-lg col-span-6 text-sm" autocomplete="off" value="{{ old('shipping_store_name') }}">
-                            <button type="button" id="store_select_modal_open" class="col-start-11 col-span-2 rounded-lg bg-black text-white text-sm text-center">選択</button>
+                            <label for="shipping_store_name" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">店舗名<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
+                            <input type="text" id="shipping_store_name" name="shipping_store_name" class="rounded-lg col-span-10 xl:col-span-6 text-sm" autocomplete="off" value="{{ old('shipping_store_name') }}">
+                            <button type="button" id="store_select_modal_open" class="col-start-11 col-span-2 xl:col-span-2 rounded-lg bg-black text-white text-sm text-center">選択</button>
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="shipping_store_zip_code" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">〒<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
-                            <input type="tel" id="shipping_store_zip_code" name="shipping_store_zip_code" class="rounded-lg col-span-3 text-sm" autocomplete="off" value="{{ old('shipping_store_zip_code') }}">
+                            <label for="shipping_store_zip_code" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">〒<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
+                            <input type="tel" id="shipping_store_zip_code" name="shipping_store_zip_code" class="rounded-lg col-span-6 xl:col-span-3 text-sm" autocomplete="off" value="{{ old('shipping_store_zip_code') }}">
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="shipping_store_address_1" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">住所1<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
-                            <input type="text" id="shipping_store_address_1" name="shipping_store_address_1" class="rounded-lg col-span-9 text-sm" autocomplete="off" value="{{ old('shipping_store_address_1') }}">
+                            <label for="shipping_store_address_1" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">住所1<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
+                            <input type="text" id="shipping_store_address_1" name="shipping_store_address_1" class="rounded-lg col-span-12 xl:col-span-9 text-sm" autocomplete="off" value="{{ old('shipping_store_address_1') }}">
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="shipping_store_address_2" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">住所2</label>
-                            <input type="text" id="shipping_store_address_2" name="shipping_store_address_2" class="rounded-lg col-span-9 text-sm" autocomplete="off" value="{{ old('shipping_store_address_2') }}">
+                            <label for="shipping_store_address_2" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">住所2</label>
+                            <input type="text" id="shipping_store_address_2" name="shipping_store_address_2" class="rounded-lg col-span-12 xl:col-span-9 text-sm" autocomplete="off" value="{{ old('shipping_store_address_2') }}">
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="shipping_store_tel_number" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">TEL<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
-                            <input type="tel" id="shipping_store_tel_number" name="shipping_store_tel_number" class="rounded-lg col-span-3 text-sm" autocomplete="off" value="{{ old('shipping_store_tel_number') }}">
+                            <label for="shipping_store_tel_number" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">TEL<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
+                            <input type="tel" id="shipping_store_tel_number" name="shipping_store_tel_number" class="rounded-lg col-span-6 xl:col-span-3 text-sm" autocomplete="off" value="{{ old('shipping_store_tel_number') }}">
                         </div>
                         <div class="col-span-12 grid grid-cols-12">
-                            <label for="store_pic" class="col-start-1 col-span-3 ml-6 mt-2 text-sm">担当者<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
-                            <input type="text" id="store_pic" name="store_pic" class="rounded-lg col-span-3 text-sm" autocomplete="off" value="{{ old('store_pic') }}">
+                            <label for="store_pic" class="col-start-1 col-span-12 xl:col-span-3 ml-0 xl:ml-6 mt-2 text-sm">担当者<span class="text-xs bg-red-500 text-white text-center px-2 py-1 rounded-md ml-1">必須</span></label>
+                            <input type="text" id="store_pic" name="store_pic" class="rounded-lg col-span-6 xl:col-span-3 text-sm" autocomplete="off" value="{{ old('store_pic') }}">
                         </div>
                     </div>
                     <!-- 配送希望日時欄 -->
-                    <div class="row-span-3 col-span-3 grid grid-cols-12 gap-4 border border-black rounded-lg p-3 bg-emerald-100">
+                    <div class="row-span-3 col-span-12 xl:col-span-3 grid grid-cols-12 gap-4 border border-black rounded-lg p-3 bg-emerald-100">
                         <div class="col-span-12 grid grid-cols-12">
                             <p class="col-span-12"><i class="las la-info-circle la-lg"></i>配送希望日時</p>
                         </div>
@@ -68,12 +68,11 @@
                     </div>
                 </div>
                 <!-- 発注商品一覧 -->
-                <p class="col-start-1 mt-5"><i class="las la-info-circle la-lg"></i>発注商品</p>
-                <table class="col-start-1 col-span-8">
+                <p class="col-span-12 mt-5"><i class="las la-info-circle la-lg"></i>発注商品</p>
+                <table class="col-start-1 col-span-12 xl:col-span-8">
                     <thead>
-                        <tr class="text-sm text-left text-white bg-gray-600 border-gray-600">
-                            <th class="font-thin p-2 px-2 w-2/12">商品コード</th>
-                            <th class="font-thin p-2 px-2 w-5/12">商品名</th>
+                        <tr class="text-xs xl:text-sm text-left text-white bg-gray-600 border-gray-600">
+                            <th class="font-thin p-2 px-2 w-7/12">商品名</th>
                             <th class="font-thin p-2 px-2 w-2/12 text-right">有効在庫数</th>
                             <th class="font-thin p-2 px-2 w-2/12 text-right">発注数</th>
                             <th class="font-thin p-2 px-2 w-1/12 text-center">削除</th>
@@ -81,8 +80,7 @@
                     </thead>
                     <tbody class="bg-white">
                         @foreach(session('order_info') as $item)
-                            <tr id="{{ $item['item_id'] }}" class="text-sm h-14 hover:bg-teal-100">
-                                <td class="p-1 px-2 border">{{ $item['item_code'] }}</td>
+                            <tr id="{{ $item['item_id'] }}" class="text-xs xl:text-sm h-14 hover:bg-teal-100">
                                 <td class="p-1 px-2 border">{{ $item['item_name'] }}</td>
                                 <td class="p-1 px-2 border text-right">{{ number_format(GetAvailableStockQuantityFunc::GetAvailableStockQuantityFunc($item['item_id'])) }}</td>
                                 <td class="p-1 px-2 border"><input type="tel" name="{{ 'order_quantity['.$item['item_id'].']' }}" class="order_quantity text-sm text-right rounded-lg w-full" autocomplete="off" value="{{ $item['quantity'] }}"></td>

@@ -2,41 +2,43 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="grid grid-cols-12 gap-4">
-            <div class="inline-block col-span-2 text-xl text-gray-800 p-2">
+            <div class="col-span-4 xl:col-span-2 font-semibold text-base xl:text-xl text-gray-800 p-2">
                 店舗マスタ
             </div>
-            <a href="{{ route('store.download') }}" class="col-start-11 col-span-1 rounded-lg text-center bg-orange-200 py-2">出力</a>
-            <button type="button" id="store_register_modal_open" class="col-start-12 col-span-1 rounded-lg text-center bg-blue-200">登録</button>
+            <a href="{{ route('store.download') }}" class="col-start-7 xl:col-start-11 col-span-3 xl:col-span-1 rounded-lg text-center bg-orange-200 py-3 text-xs xl:text-sm">出力</a>
+            <button type="button" id="store_register_modal_open" class="col-start-10 xl:col-start-12 col-span-3 xl:col-span-1 rounded-lg text-center bg-blue-200 text-xs xl:text-sm">登録</button>
         </div>
     </x-slot>
     <div class="py-3 px-4 grid grid-cols-12">
-        <table class="col-span-12">
-            <thead>
-                <tr class="text-sm text-left text-white bg-gray-600 border-gray-600">
-                    <th class="font-thin p-2 px-2 w-2/12">店舗名</th>
-                    <th class="font-thin p-2 px-2 w-1/12">店舗郵便番号</th>
-                    <th class="font-thin p-2 px-2 w-4/12">店舗住所1</th>
-                    <th class="font-thin p-2 px-2 w-3/12">店舗住所2</th>
-                    <th class="font-thin p-2 px-2 w-1/12">店舗電話番号</th>
-                    <th class="font-thin p-2 px-2 w-1/12 text-center">操作</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white">
-                @foreach($stores as $store)
-                    <tr class="text-sm hover:bg-teal-100">
-                        <td class="p-1 px-2 border" id="aaa">{{ $store->store_name }}</td>
-                        <td class="p-1 px-2 border">{{ $store->store_zip_code }}</td>
-                        <td class="p-1 px-2 border">{{ $store->store_address_1 }}</td>
-                        <td class="p-1 px-2 border">{{ $store->store_address_2 }}</td>
-                        <td class="p-1 px-2 border">{{ $store->store_tel_number }}</td>
-                        <td class="p-1 px-2 border text-center">
-                            <a id="{{ $store->store_id }}" class="store_modify cursor-pointer text-sm bg-orange-200 rounded-lg text-center px-2 py-1">変更</a>
-                            <a href="{{ route('store.delete', ['store_id' => $store->store_id]) }}" class="store_delete text-sm bg-red-500 text-white rounded-lg text-center px-2 py-1">削除</a>
-                        </td>
+        <div class="col-span-12 grid grid-cols-12 overflow-x-auto">
+            <table class="col-span-12 min-w-full">
+                <thead>
+                    <tr class="text-xs xl:text-sm text-left text-white bg-gray-600 border-gray-600 whitespace-nowrap">
+                        <th class="font-thin p-2 px-2 w-2/12">店舗名</th>
+                        <th class="font-thin p-2 px-2 w-1/12">店舗郵便番号</th>
+                        <th class="font-thin p-2 px-2 w-4/12">店舗住所1</th>
+                        <th class="font-thin p-2 px-2 w-3/12">店舗住所2</th>
+                        <th class="font-thin p-2 px-2 w-1/12">店舗電話番号</th>
+                        <th class="font-thin p-2 px-2 w-1/12 text-center">操作</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="bg-white">
+                    @foreach($stores as $store)
+                        <tr class="text-xs xl:text-sm hover:bg-teal-100 whitespace-nowrap">
+                            <td class="p-1 px-2 border" id="aaa">{{ $store->store_name }}</td>
+                            <td class="p-1 px-2 border">{{ $store->store_zip_code }}</td>
+                            <td class="p-1 px-2 border">{{ $store->store_address_1 }}</td>
+                            <td class="p-1 px-2 border">{{ $store->store_address_2 }}</td>
+                            <td class="p-1 px-2 border">{{ $store->store_tel_number }}</td>
+                            <td class="p-1 px-2 border text-center">
+                                <a id="{{ $store->store_id }}" class="store_modify cursor-pointer text-xs xl:text-sm bg-orange-200 rounded-lg text-center px-2 py-1">変更</a>
+                                <a href="{{ route('store.delete', ['store_id' => $store->store_id]) }}" class="store_delete text-xs xl:text-sm bg-red-500 text-white rounded-lg text-center px-2 py-1">削除</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- 店舗登録モーダル -->
     <div id="store_register_modal" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4">

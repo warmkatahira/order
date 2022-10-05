@@ -3,7 +3,7 @@
         <div class="col-span-2">
             <input type="checkbox" class="menu-btn" id="menu-btn">
             <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
-            <ul class="menu">
+            <ul class="menu z-10">
                 <li><a href="{{ route('home.index') }}">ホーム</a></li>
                 <!-- 倉庫以外のアカウントで発注機能表示 -->
                 @if(Auth::user()->role_id != 21)
