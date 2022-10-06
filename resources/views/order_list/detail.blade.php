@@ -71,21 +71,27 @@
             </div>
         </div>
         <!-- 発注商品一覧 -->
-        <table class="col-start-1 col-span-12 mt-5">
-            <thead>
-                <tr class="text-sm text-left text-white bg-gray-600 border-gray-600">
-                    <th class="font-thin p-2 px-2 w-10/12">商品名</th>
-                    <th class="font-thin p-2 px-2 w-2/12 text-right">発注数</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white">
-                @foreach($order_details as $order_detail)
-                    <tr class="text-sm hover:bg-teal-100">
-                        <td class="p-1 px-2 border">{{ $order_detail->order_item_name }}</td>
-                        <td class="p-1 px-2 border text-right">{{ $order_detail->order_quantity }}</td>
+        <div class="col-span-12 grid grid-cols-12 overflow-x-auto">
+            <table class="col-span-12 min-w-full mt-5">
+                <thead>
+                    <tr class="text-sm text-left text-white bg-gray-600 border-gray-600 whitespace-nowrap">
+                        <th class="font-thin p-2 px-2 w-2/12">商品コード</th>
+                        <th class="font-thin p-2 px-2 w-2/12">商品JANコード</th>
+                        <th class="font-thin p-2 px-2 w-6/12">商品名</th>
+                        <th class="font-thin p-2 px-2 w-2/12 text-right">発注数</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="bg-white">
+                    @foreach($order_details as $order_detail)
+                        <tr class="text-sm hover:bg-teal-100 whitespace-nowrap">
+                            <td class="p-1 px-2 border">{{ $order_detail->order_item_code }}</td>
+                            <td class="p-1 px-2 border">{{ $order_detail->order_item_jan_code }}</td>
+                            <td class="p-1 px-2 border">{{ $order_detail->order_item_name }}</td>
+                            <td class="p-1 px-2 border text-right">{{ $order_detail->order_quantity }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </x-app-layout>
