@@ -10,6 +10,7 @@ use App\Models\OrderDetail;
 use App\Models\Item;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ShippingActualMail;
+use App\Services\MailTargetService;
 
 class ShippingActualService
 {
@@ -72,8 +73,14 @@ class ShippingActualService
                 'tracking_number' => $order->tracking_number,
             ];
         }
-        // 出荷メールを送信
-        Mail::send(new ShippingActualMail($order_info));
+        // サービスクラスを定義
+        $MailTargetService = new MailTargetService;
+        // メールを送る対象を取得
+        $users = $MailTargetService->getMailTargetAll();
+        foreach($users as $user){
+            // 出荷メールを送信
+            Mail::send(new ShippingActualMail($order_info, $user->email));
+        }
         return;
     }
 }

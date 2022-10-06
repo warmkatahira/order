@@ -10,6 +10,20 @@
         </div>
     </x-slot>
     <div class="py-3 px-4 grid grid-cols-12">
+        <!-- 検索条件 -->
+        <form method="GET" action="{{ route('store.search') }}" class="m-0 col-span-12 grid grid-cols-12">
+            <p class="col-span-12 xl:col-span-2 text-base xl:text-xl border-b-4 border-blue-500 mb-3">検索条件</p>
+            <div class="col-span-12 grid grid-cols-12 mb-3">
+                <!-- 店舗名条件 -->
+                <label for="search_store_name" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">店舗名</label>
+                <input type="text" id="search_store_name" name="search_store_name" class="col-span-7 xl:col-span-2 text-xs xl:text-sm" value="{{ session('search_store_name') }}" autocomplete="off">
+                <!-- 店舗住所1条件 -->
+                <label for="search_store_address_1" class="col-span-5 xl:col-span-1 text-xs xl:text-sm text-center py-2 bg-black text-white">店舗住所1</label>
+                <input type="text" id="search_store_address_1" name="search_store_address_1" class="col-span-7 xl:col-span-2 text-xs xl:text-sm" value="{{ session('search_store_address_1') }}" autocomplete="off">
+                <!-- 検索ボタン -->
+                <button type="submit" class="col-start-1 xl:col-start-12 col-span-12 xl:col-span-1 py-2 xl:py-0 mt-2 xl:mt-0 rounded-lg bg-black text-white"><i class="las la-search la-lg"></i></button>
+            </div>
+        </form>
         <div class="col-span-12 grid grid-cols-12 overflow-x-auto">
             <table class="col-span-12 min-w-full">
                 <thead>
@@ -38,6 +52,10 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <!-- ページネーション -->
+        <div class="col-span-12 mt-3">
+            {{ $stores->appends(request()->input())->links() }}
         </div>
     </div>
     <!-- 店舗登録モーダル -->

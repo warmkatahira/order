@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>発注システム</title>
+        <title>Order</title>
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Kosugi+Maru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Kosugi+Maru&family=Lobster&display=swap" rel="stylesheet">
 
         <!-- Lordicon -->
         <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>

@@ -995,6 +995,9 @@ video {
 }.text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }.text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1040,9 +1043,6 @@ video {
 }.text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}.text-red-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
 }.text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1286,6 +1286,8 @@ video {
     margin-top: 0px;
   }.xl\:ml-6 {
     margin-left: 1.5rem;
+  }.xl\:w-full {
+    width: 100%;
   }.xl\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

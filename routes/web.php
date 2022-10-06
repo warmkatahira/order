@@ -16,6 +16,7 @@ use App\Http\Controllers\StockManagementController;
 use App\Http\Controllers\StockHistoryListController;
 use App\Http\Controllers\ShippingActualController;
 use App\Http\Controllers\LoginCheckController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,7 @@ Route::group(['middleware' => 'auth'], function(){
 
         Route::controller(StoreController::class)->group(function(){
             Route::get('/store', 'index')->name('store.index');
+            Route::get('/store_search', 'search')->name('store.search');
             Route::post('/store_register_modify', 'register_modify')->name('store.register_modify');
             Route::post('/store_register', 'register')->name('store.register');
             Route::get('/store_delete', 'delete')->name('store.delete');
@@ -133,6 +135,15 @@ Route::group(['middleware' => 'auth'], function(){
             Route::get('/stock_history_list_detail', 'detail')->name('stock_history_list.detail');
             Route::get('/stock_history_list_search', 'search')->name('stock_history_list.search');
             Route::get('/stock_history_data_download', 'download')->name('stock_history_data_download');
+        });
+
+        // システム管理者のみアクセス可能
+        Route::group(['middleware' => ['auth', 'can:admin-only']], function () {
+            Route::controller(AdminController::class)->group(function(){
+                Route::get('/admin', 'index')->name('admin.index');
+                Route::get('/admin_user', 'user_index')->name('admin.user_index');
+                Route::post('/admin_user_save', 'user_save')->name('admin.user_save');
+            });
         });
     });
 });

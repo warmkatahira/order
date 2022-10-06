@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/order_input.js', 'public/js')
 .js('resources/js/order_detail.js', 'public/js')
 .js('resources/js/stock_mgt.js', 'public/js')
+.js('resources/js/admin.js', 'public/js')
 .autoload({
     jquery: ['$', 'window.jQuery']
 })

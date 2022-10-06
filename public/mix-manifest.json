@@ -6,6 +6,7 @@
     "/js/order_input.js": "/js/order_input.js",
     "/js/order_detail.js": "/js/order_detail.js",
     "/js/stock_mgt.js": "/js/stock_mgt.js",
+    "/js/admin.js": "/js/admin.js",
     "/css/app.css": "/css/app.css",
     "/css/navigation.css": "/css/navigation.css"
 }

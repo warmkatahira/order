@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>日次収支システム</title>
+        <title>Order</title>
 
         <!-- favicon -->
         <link rel="shortcut icon" type="image/x-icon"  href="{{ asset('image/favicon.svg') }}">
@@ -13,10 +13,10 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Kosugi+Maru&family=Lobster&display=swap" rel="stylesheet">
     
     </head>
-    <body style="font-family:Zen Maru Gothic" class="bg-slate-100">
+    <body style="font-family:Kosugi Maru" class="bg-slate-100">
         <div class="min-h-screen">
             <div class="border-4 border-orange-400 my-5 mx-5 bg-orange-100">
                 <p class="text-3xl py-10 text-center">

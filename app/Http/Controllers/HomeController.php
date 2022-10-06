@@ -18,9 +18,6 @@ class HomeController extends Controller
         // 今月の出荷済み件数を取得
         $current_month_shipping_cnt = Order::whereBetween('shipping_date', [Carbon::now()->startOfMonth()->format('Y-m-d'), Carbon::now()->endOfMonth()->format('Y-m-d')])
                                         ->count();
-        
-
-
         return view('home')->with([
             'syukka_machi_cnt' => $syukka_machi_cnt,
             'syukka_sagyou_cnt' => $syukka_sagyou_cnt,

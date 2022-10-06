@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ShippingActualMail extends Mailable
+class UserStatusChangeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +16,9 @@ class ShippingActualMail extends Mailable
      *
      * @return void
      */
-    public function __construct($order_info, $email)
+    public function __construct($name, $email)
     {
-        $this->order_info = $order_info;
+        $this->name = $name;
         $this->email = $email;
     }
 
@@ -29,12 +29,12 @@ class ShippingActualMail extends Mailable
      */
     public function build()
     {
-        $to = $this->email;
+        $to = array($this->email);
         return $this->to($to)
-            ->subject('≪自動配信≫≪発注システム≫出荷完了通知')
-            ->view('mail.shipping_actual_mail')
+            ->subject('≪自動配信≫≪発注システム≫アカウント有効化通知')
+            ->view('mail.user_status_change')
             ->with([
-                'order_info' => $this->order_info,
+                'name' => $this->name,
             ]);
     }
 }

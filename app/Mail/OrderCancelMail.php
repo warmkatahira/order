@@ -16,8 +16,9 @@ class OrderCancelMail extends Mailable
      *
      * @return void
      */
-    public function __construct($order_id, $shipping_store_name, $delivery_date)
+    public function __construct($order_id, $shipping_store_name, $delivery_date, $email)
     {
+        $this->email = $email;
         $this->order_id = $order_id;
         $this->shipping_store_name = $shipping_store_name;
         $this->delivery_date = $delivery_date;
@@ -30,7 +31,8 @@ class OrderCancelMail extends Mailable
      */
     public function build()
     {
-        $to = array('t.katahira@warm.co.jp');
+        // toの宛先を取得
+        $to = $this->email;
         return $this->to($to)
             ->subject('≪自動配信≫≪発注システム≫発注キャンセル通知 発注ID:'.$this->order_id)
             ->view('mail.order_cancel_mail')

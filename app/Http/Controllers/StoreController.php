@@ -7,13 +7,31 @@ use Illuminate\Http\Request;
 use App\Models\Store;
 use Rap2hpoutre\FastExcel\FastExcel;
 use Carbon\Carbon;
+use App\Services\StoreSearchService;
 
 class StoreController extends Controller
 {
     public function index()
     {
-        // 店舗マスタの情報を取得
-        $stores = Store::all();
+        // サービスクラスを定義
+        $StoreSearchService = new StoreSearchService;
+        // 検索条件が格納されているセッションを削除
+        $StoreSearchService->deleteSearchSession();
+        // 検索処理
+        $stores = $StoreSearchService->getStoreSearch();
+        return view('master.store_index')->with([
+            'stores' => $stores,
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        // サービスクラスを定義
+        $StoreSearchService = new StoreSearchService;
+        // 検索条件を取得
+        $StoreSearchService->getSearchCondition($request);
+        // 検索処理
+        $stores = $StoreSearchService->getStoreSearch();
         return view('master.store_index')->with([
             'stores' => $stores,
         ]);

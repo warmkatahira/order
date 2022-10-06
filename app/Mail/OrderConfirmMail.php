@@ -16,11 +16,12 @@ class OrderConfirmMail extends Mailable
      *
      * @return void
      */
-    public function __construct($order_id, $shipping_store_name, $delivery_date)
+    public function __construct($order_id, $shipping_store_name, $delivery_date, $email)
     {
         $this->order_id = $order_id;
         $this->shipping_store_name = $shipping_store_name;
         $this->delivery_date = $delivery_date;
+        $this->email = $email;
     }
 
     /**
@@ -30,7 +31,7 @@ class OrderConfirmMail extends Mailable
      */
     public function build()
     {
-        $to = array('t.katahira@warm.co.jp');
+        $to = $this->email;
         return $this->to($to)
             ->subject('≪自動配信≫≪発注システム≫発注通知 発注ID:'.$this->order_id)
             ->view('mail.order_confirm_mail')
