@@ -601,20 +601,20 @@ video {
   margin-top: 0.75rem;
 }.mr-3 {
   margin-right: 0.75rem;
-}.mt-4 {
-  margin-top: 1rem;
+}.mb-5 {
+  margin-bottom: 1.25rem;
 }.mb-4 {
   margin-bottom: 1rem;
 }.mt-1 {
   margin-top: 0.25rem;
+}.mt-4 {
+  margin-top: 1rem;
 }.ml-1 {
   margin-left: 0.25rem;
 }.mt-6 {
   margin-top: 1.5rem;
 }.ml-6 {
   margin-left: 1.5rem;
-}.mb-5 {
-  margin-bottom: 1.25rem;
 }.mt-10 {
   margin-top: 2.5rem;
 }.mr-2 {
@@ -989,12 +989,12 @@ video {
 }.text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }.text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }.text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1294,6 +1294,14 @@ video {
   }.xl\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }.xl\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }.xl\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }.xl\:text-center {
+    text-align: center;
   }.xl\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1303,6 +1311,9 @@ video {
   }.xl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }.xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }.xl\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
