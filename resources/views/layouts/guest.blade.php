@@ -21,7 +21,7 @@
 
     </head>
     <body style="font-family:Kosugi Maru">
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="text-gray-900 antialiased">
             {{ $slot }}
         </div>
     </body>

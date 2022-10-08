@@ -28,7 +28,7 @@
     </head>
     <body style="font-family:Kosugi Maru" class="bg-gray-100">
         <div class="grid grid-cols-12 gap-4">
-            <p class="col-span-12 text-5xl text-center pt-2" style="font-family:Lobster">Order</p>
+            <p class="col-span-3 text-5xl pt-2 pl-2" style="font-family:Lobster">Order</p>
             @if (Route::has('login'))
                 @auth
                     <a href="{{ route('home.index') }}" class="col-start-5 col-span-4 bg-black text-white text-sm text-center py-10 rounded-lg mt-10">ホーム</a>

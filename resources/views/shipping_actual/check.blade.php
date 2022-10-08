@@ -14,9 +14,10 @@
         <table class="col-span-12 xl:col-span-4 mt-5">
             <thead>
                 <tr class="text-xs xl:text-sm text-left text-white bg-gray-600 border-gray-600">
-                    <th class="font-thin p-2 px-2 w-4/12">発注ID</th>
-                    <th class="font-thin p-2 px-2 w-4/12">出荷日</th>
-                    <th class="font-thin p-2 px-2 w-4/12">配送伝票番号</th>
+                    <th class="font-thin p-2 px-2 w-3/12">発注ID</th>
+                    <th class="font-thin p-2 px-2 w-3/12">出荷日</th>
+                    <th class="font-thin p-2 px-2 w-3/12">配送伝票番号</th>
+                    <th class="font-thin p-2 px-2 w-3/12">配送方法</th>
                 </tr>
             </thead>
             <tbody class="bg-white">
@@ -25,6 +26,7 @@
                         <td class="p-1 px-2 border">{{ $import['order_id'] }}</td>
                         <td class="p-1 px-2 border">{{ $import['shipping_date'] }}</td>
                         <td class="p-1 px-2 border">{{ $import['tracking_number'] }}</td>
+                        <td class="p-1 px-2 border">{{ $import['shipping_method'] }}</td>
                     </tr>
                 @endforeach
             </tbody>

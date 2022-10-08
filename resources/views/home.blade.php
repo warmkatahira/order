@@ -1,3 +1,5 @@
+<script src="{{ asset('js/a.js') }}" defer></script>
+<script src="{{ asset('js/b.js') }}" defer></script>
 <x-app-layout>
     <x-slot name="header">
         <div class="grid grid-cols-12 gap-4">

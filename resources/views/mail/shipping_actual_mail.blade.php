@@ -12,6 +12,7 @@
             <th style="border:1px solid #ccc; font-size:x-small;">配送希望日</th>
             <th style="border:1px solid #ccc; font-size:x-small;">出荷日</th>
             <th style="border:1px solid #ccc; font-size:x-small;">配送伝票番号</th>
+            <th style="border:1px solid #ccc; font-size:x-small;">配送方法</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
                 <td style="border:1px solid #ccc; font-size:x-small;">{{ $info['delivery_date'] }}</td>
                 <td style="border:1px solid #ccc; font-size:x-small;">{{ $info['shipping_date'] }}</td>
                 <td style="border:1px solid #ccc; font-size:x-small;">{{ $info['tracking_number'] }}</td>
+                <td style="border:1px solid #ccc; font-size:x-small;">{{ $info['shipping_method'] }}</td>
             </tr>
         @endforeach
     </tbody>

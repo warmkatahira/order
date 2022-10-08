@@ -11,7 +11,7 @@
                 @endcan
                 <li><a href="{{ route('order_list.index') }}">発注一覧</a></li>
                 <li><a href="{{ route('stock.index') }}">在庫確認</a></li>
-                <li><a href="{{ route('master.index') }}">マスタ</a></li>
+                <li><a href="{{ route('master.index') }}">マスタ管理</a></li>
                 <li><a href="{{ route('stock_mgt.index') }}">在庫管理</a></li>
                 <!-- システム管理者のアカウントのみ表示 -->
                 @can('admin-only')

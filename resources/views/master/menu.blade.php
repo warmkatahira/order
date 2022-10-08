@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-6 xl:col-span-2 font-semibold text-base xl:text-xl text-gray-800 p-2">
-                マスタメニュー
+                マスタ管理
             </div>
         </div>
     </x-slot>

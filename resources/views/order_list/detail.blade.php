@@ -14,21 +14,23 @@
         </div>
     </x-slot>
     <div class="py-3 px-4 grid grid-cols-12">
-        <form method="POST" action="{{ route('order_status_modify') }}" class="m-0 col-span-12 grid grid-cols-12">
-            @csrf
-            <p class="text-base xl:text-xl border-b-4 border-blue-500 col-span-12 xl:col-span-2 mb-3">ステータス変更</p>
-            <div class="col-span-12 grid grid-cols-12 mb-3">
-                <!-- ステータス条件 -->
-                <label for="order_status" class="col-span-3 xl:col-span-1 text-xs xl:text-sm text-center py-4 xl:py-2 bg-black text-white">ステータス</label>
-                <select id="order_status_select" name="order_status_select" class="col-span-5 xl:col-span-1 text-xs xl:text-sm">
-                    @foreach(App\Consts\OrderStatusConsts::ORDER_STATUS_LIST_MODIFY_TARGET as $key => $value)
-                        <option value="{{ $key }}">{{ $value }}</option>
-                    @endforeach
-                </select>
-                <button type="submit" id="order_status_modify" class="col-span-3 xl:col-span-1 rounded-lg bg-blue-200 ml-5 text-xs xl:text-sm">変更</button>
-                <input type="hidden" name="order_id" value="{{ $order->order_id }}">
-            </div>
-        </form>
+        @if($order->order_status != '出荷済み')
+            <form method="POST" action="{{ route('order_status_modify') }}" class="m-0 col-span-12 grid grid-cols-12">
+                @csrf
+                <p class="text-base xl:text-xl border-b-4 border-blue-500 col-span-12 xl:col-span-2 mb-3">ステータス変更</p>
+                <div class="col-span-12 grid grid-cols-12 mb-3">
+                    <!-- ステータス条件 -->
+                    <label for="order_status" class="col-span-3 xl:col-span-1 text-xs xl:text-sm text-center py-4 xl:py-2 bg-black text-white">ステータス</label>
+                    <select id="order_status_select" name="order_status_select" class="col-span-5 xl:col-span-1 text-xs xl:text-sm">
+                        @foreach(App\Consts\OrderStatusConsts::ORDER_STATUS_LIST_MODIFY_TARGET as $key => $value)
+                            <option value="{{ $key }}">{{ $value }}</option>
+                        @endforeach
+                    </select>
+                    <button type="submit" id="order_status_modify" class="col-span-3 xl:col-span-1 rounded-lg bg-blue-200 ml-5 text-xs xl:text-sm">変更</button>
+                    <input type="hidden" name="order_id" value="{{ $order->order_id }}">
+                </div>
+            </form>
+        @endif
         <div class="col-span-12 grid grid-cols-12 grid-rows-6 gap-4">
             <!-- 発注概要 -->
             <div class="row-span-6 col-span-12 xl:col-span-3 grid grid-cols-12 p-5 border border-black rounded-lg bg-emerald-100">
@@ -62,6 +64,8 @@
             <!-- 出荷情報 -->
             <div class="row-span-6 col-span-12 xl:col-span-3 grid grid-cols-12 p-5 border border-black rounded-lg bg-emerald-100">
                 <p class="col-span-12 text-sm mb-3 border-b-2 border-black">出荷情報</p>
+                <p class="col-span-4 text-sm">配送方法</p>
+                <p class="col-span-8 text-sm">{{ $order->shipping_method }}</p>
                 <p class="col-span-4 text-sm">出荷日</p>
                 <p class="col-span-8 text-sm">{{ $order->shipping_date }}</p>
                 <p class="col-span-4 text-sm">配送伝票番号</p>

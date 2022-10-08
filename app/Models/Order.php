@@ -25,6 +25,7 @@ class Order extends Model
         'shipping_store_address_1', 
         'shipping_store_address_2', 
         'shipping_store_tel_number', 
+        'shipping_method',
         'order_comment',
         'shipping_date',
         'tracking_number',

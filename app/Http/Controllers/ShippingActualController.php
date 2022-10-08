@@ -40,6 +40,7 @@ class ShippingActualController extends Controller
                 'order_id' => $line['発注ID'],
                 'shipping_date' => $line['出荷日'],
                 'tracking_number' => $line['問い合わせ番号'],
+                'shipping_method' => $line['配送方法'],
             ];
         }
         // 情報をセッションに格納

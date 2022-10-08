@@ -65,6 +65,20 @@
                         </select>
                     </div>
                 </div>
+                <!-- 配送方法欄 -->
+                <div class="row-span-2 col-span-12 xl:col-span-3 grid grid-cols-12 gap-4 border border-black rounded-lg p-3 bg-emerald-100">
+                    <div class="col-span-12 grid grid-cols-12">
+                        <p class="col-span-12"><i class="las la-info-circle la-lg"></i>配送方法</p>
+                    </div>
+                    <div class="col-span-12 grid grid-cols-12">
+                        <label for="shipping_method" class="col-start-1 col-span-5 ml-6 mt-2 text-sm">配送方法</label>
+                        <select id="shipping_method" name="shipping_method" class="rounded-lg col-span-7 text-sm">
+                            @foreach(App\Consts\ShippingMethodConsts::SHIPPING_METHOD_LIST as $key => $value)
+                                <option value="{{ $key }}" {{ $key == old('shipping_method', $order->shipping_method) ? 'selected' : '' }}>{{ $value }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <!-- 発注商品一覧 -->
             <p class="col-start-1 mt-5"><i class="las la-info-circle la-lg"></i>発注商品</p>

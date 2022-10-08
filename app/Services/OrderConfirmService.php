@@ -71,6 +71,7 @@ class OrderConfirmService
             'shipping_store_address_1' => $request->shipping_store_address_1,
             'shipping_store_address_2' => $request->shipping_store_address_2,
             'shipping_store_tel_number' => $request->shipping_store_tel_number,
+            'shipping_method' => $request->shipping_method,
         ]);
         return $order;
     }

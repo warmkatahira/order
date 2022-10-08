@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('shipping_store_address_1');
             $table->string('shipping_store_address_2')->nullable();
             $table->string('shipping_store_tel_number')->nullable();
+            $table->string('shipping_method');
             $table->string('order_comment')->nullable();
             $table->date('shipping_date')->nullable();
             $table->string('tracking_number')->nullable();

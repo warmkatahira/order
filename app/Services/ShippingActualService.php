@@ -32,6 +32,7 @@ class ShippingActualService
             $order->update([
                 'shipping_date' => $nowDate->format('Ymd'),
                 'tracking_number' => $import['tracking_number'],
+                'shipping_method' => $import['shipping_method'],
                 'warehouse_pic_user_id' => Auth::user()->id,
                 'warehouse_pic_user_name' => Auth::user()->name,
                 'order_status' => '出荷済み',
@@ -71,6 +72,7 @@ class ShippingActualService
                 'delivery_date' => $order->delivery_date,
                 'shipping_date' => $order->shipping_date,
                 'tracking_number' => $order->tracking_number,
+                'shipping_method' => $order->shipping_method,
             ];
         }
         // サービスクラスを定義

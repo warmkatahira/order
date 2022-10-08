@@ -27,6 +27,7 @@ class ShippingDataDownloadController extends Controller
                 'orders.store_pic as 店舗担当者',
                 'orders.delivery_date as 配送希望日',
                 'orders.delivery_time as 配送希望時間',
+                'orders.shipping_method as 配送方法',
                 'order_details.order_item_code as 商品コード',
                 'order_details.order_item_jan_code as 商品JANコード',
                 'order_details.order_item_name as 商品名',
