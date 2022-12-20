@@ -60,7 +60,7 @@ class OrderController extends Controller
         $OrderConfirmService = new OrderConfirmService;
         try {
             // トランザクション処理を開始
-            //DB::beginTransaction();
+            DB::beginTransaction();
             // セッションから発注商品情報を取得
             $order_info = $OrderConfirmService->getOrderInfo($request->operation_type);
             // 引当可能な在庫数があるか確認
