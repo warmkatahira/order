@@ -10962,11 +10962,11 @@ $("[class^=order_in]").on("click", function () {
   // カートに追加する商品IDを取得
   target_item_id = this.id; // 環境でパスを可変させる
 
-  if (false) { var ajax_url; }
-
   if (true) {
-    var ajax_url = '/order/cart_in_ajax';
+    var ajax_url = '/cart_in_ajax';
   }
+
+  if (false) { var ajax_url; }
 
   $.ajax({
     headers: {

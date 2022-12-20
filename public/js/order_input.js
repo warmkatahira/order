@@ -10975,11 +10975,11 @@ $("[class^=order_item_delete]").on("click", function () {
   // カートから削除する商品IDを取得
   var delete_item_id = $(this).parent().parent().attr('id'); // 環境でパスを可変させる
 
-  if (false) { var ajax_url; }
-
   if (true) {
-    var ajax_url = '/order/cart_delete_ajax';
+    var ajax_url = '/cart_delete_ajax';
   }
+
+  if (false) { var ajax_url; }
 
   $.ajax({
     headers: {
@@ -11021,11 +11021,11 @@ $("[id=store_search_enter]").on("click", function () {
   // 検索ワードを取得
   var search_word = store_search.value; // 環境でパスを可変させる
 
-  if (false) { var ajax_url; }
-
   if (true) {
-    var ajax_url = '/order/store_search_get_ajax';
+    var ajax_url = '/store_search_get_ajax';
   }
+
+  if (false) { var ajax_url; }
 
   $.ajax({
     headers: {
@@ -11064,11 +11064,11 @@ $("[id=store_select_enter]").on("click", function () {
     var num = store_select.selectedIndex;
     var target_store_id = store_select.options[num].value; // 環境でパスを可変させる
 
-    if (false) { var ajax_url; }
-
     if (true) {
-      var ajax_url = '/order/select_store_get_ajax';
+      var ajax_url = '/select_store_get_ajax';
     }
+
+    if (false) { var ajax_url; }
 
     $.ajax({
       headers: {
@@ -11103,11 +11103,11 @@ $("[class^=order_quantity]").on("change", function () {
 
   var quantity = this.value; // 環境でパスを可変させる
 
-  if (false) { var ajax_url; }
-
   if (true) {
-    var ajax_url = '/order/order_quantity_change_ajax';
+    var ajax_url = '/order_quantity_change_ajax';
   }
+
+  if (false) { var ajax_url; }
 
   $.ajax({
     headers: {

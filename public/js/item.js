@@ -11025,11 +11025,11 @@ $("[class^=item_modify]").on("click", function () {
   // 変更対象の店舗IDを取得
   modify_item_id = this.id; // 環境でパスを可変させる
 
-  if (false) { var ajax_url; }
-
   if (true) {
-    var ajax_url = '/order/item_info_get_ajax';
+    var ajax_url = '/item_info_get_ajax';
   }
+
+  if (false) { var ajax_url; }
 
   $.ajax({
     headers: {
