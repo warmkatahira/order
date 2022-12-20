@@ -13,10 +13,6 @@ class OrderListController extends Controller
 {
     public function index()
     {
-
-        $x = DB::connection('mysql_second')->select('select * from items');
-        dd($x);
-
         // サービスクラスを定義
         $OrderSearchService = new OrderSearchService;
         // 初期表示させるための処理を実施
