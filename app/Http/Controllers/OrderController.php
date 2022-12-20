@@ -73,7 +73,7 @@ class OrderController extends Controller
             $OrderConfirmService->updateAllocatedStockQuantity($order_info);
             // ordersテーブルにレコードを追加
             $order = $OrderConfirmService->addOrder($request, $nowDate);
-            // order_detailsテーブルにレコードを追加
+            // order_detailsテーブルにレコードを追加する
             $OrderConfirmService->addOrderDetail($order['order_id'], $order_info);
             // メールを送信
             $OrderConfirmService->sendOrderConfirmMail($order['order_id'], $request);
